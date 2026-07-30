@@ -1,14 +1,6 @@
+import { Link } from "react-router"
+import type Imovie from "../interface/movie.interface"
 
-interface Imovie {
-    titulo: string,
-    año: number,
-    genero: string,
-    director: string,
-    duracion: number,
-    descripcion: string,
-    imagen: string,
-    puntuacion: number
-}
 
 interface MovieCardProps {
     movie: Imovie
@@ -61,12 +53,12 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
                     {movie.descripcion}
                 </p>
 
-                <button
+                <Link
                     className="movie-button"
-                    type="button"
+                    to={`/movies/${movie.id}`}
                 >
                     Ver detalles
-                </button>
+                </Link>
             </div>
         </article>
     );
